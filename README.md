@@ -1,6 +1,6 @@
 <!-- Header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6a11cb,100:2575fc&height=200&section=header&text=Blessed&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=FiveM%20and%20Web%20Developer%20%C2%B7%20Founder%20of%20BB%20Store&descAlignY=58&descSize=18" alt="Blessed" />
+  <img src="assets/header.svg" width="100%" alt="Blessed - FiveM and Web Developer, Founder of BB Store" />
 </p>
 
 <p align="center">
@@ -64,5 +64,5 @@
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2575fc,100:6a11cb&height=120&section=footer" alt="" />
+  <img src="assets/footer.svg" width="100%" alt="Thanks for stopping by" />
 </p>

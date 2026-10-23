@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0a1a"/>
+      <stop offset="1" stop-color="#070d1f"/>
+    </linearGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c4b5fd"/>
+      <stop offset="0.5" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#93c5fd"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7b61ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#7b61ff"/>
+      <stop offset="1" stop-color="#2575fc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+    <radialGradient id="fade" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0.3" stop-color="#fff"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <mask id="gridMask"><rect width="1200" height="320" fill="url(#fade)"/></mask>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="card"><rect width="1200" height="320" rx="20"/></clipPath>
+    <clipPath id="nameClip">
+      <text x="600" y="168" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="14">BLESSED</text>
+    </clipPath>
+  </defs>
+
+  <style>
+    .orb1 { animation: drift1 14s ease-in-out infinite alternate; }
+    .orb2 { animation: drift2 18s ease-in-out infinite alternate; }
+    .orb3 { animation: drift3 16s ease-in-out infinite alternate; }
+    @keyframes drift1 { to { transform: translate(140px, 40px); } }
+    @keyframes drift2 { to { transform: translate(-160px, -30px); } }
+    @keyframes drift3 { to { transform: translate(60px, -50px); } }
+    .shine { animation: shine 5s ease-in-out infinite; }
+    @keyframes shine { 0% { transform: translateX(-700px); } 60%, 100% { transform: translateX(1300px); } }
+    .fade { opacity: 0; animation: up 1s ease-out forwards; }
+    .d1 { animation-delay: .2s; } .d2 { animation-delay: .5s; } .d3 { animation-delay: .8s; }
+    @keyframes up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .35; } }
+    .mono { font-family: 'Cascadia Code', Consolas, 'SFMono-Regular', Menlo, monospace; }
+    .sans { font-family: 'Segoe UI', Inter, Helvetica, Arial, sans-serif; }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <g filter="url(#blur)" opacity="0.75">
+      <circle class="orb1" cx="230" cy="90" r="150" fill="#6a11cb"/>
+      <circle class="orb2" cx="980" cy="240" r="170" fill="#2575fc"/>
+      <circle class="orb3" cx="640" cy="330" r="120" fill="#a855f7" opacity="0.6"/>
+    </g>
+    <rect width="1200" height="320" fill="url(#grid)" mask="url(#gridMask)"/>
+
+    <!-- terminal line, top-left -->
+    <g class="mono fade" font-size="15" fill="#8b93a7">
+      <circle cx="44" cy="40" r="6" fill="#ff5f57"/>
+      <circle cx="64" cy="40" r="6" fill="#febc2e"/>
+      <circle cx="84" cy="40" r="6" fill="#28c840"/>
+      <text x="108" y="45"><tspan fill="#7b61ff">~/bb-store</tspan> <tspan fill="#5eead4">$</tspan> ensure blessed_core <tspan class="cursor" fill="#c4b5fd">▋</tspan></text>
+    </g>
+
+    <!-- status pill, top-right -->
+    <g class="sans fade" font-size="14" font-weight="600">
+      <rect x="976" y="24" width="180" height="32" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+      <circle class="pulse" cx="998" cy="40" r="5" fill="#28c840"/>
+      <text x="1012" y="45" fill="#d1d5db">Open for commissions</text>
+    </g>
+
+    <!-- name -->
+    <text x="600" y="168" text-anchor="middle" class="sans fade d1" font-size="104" font-weight="900" letter-spacing="14" fill="url(#name)" filter="url(#glow)">BLESSED</text>
+    <g clip-path="url(#nameClip)">
+      <rect class="shine" x="0" y="60" width="260" height="140" fill="url(#shine)" transform="skewX(-20)"/>
+    </g>
+
+    <rect x="390" y="194" width="420" height="2" fill="url(#line)" class="fade d2"/>
+
+    <text x="600" y="232" text-anchor="middle" class="mono fade d2" font-size="20" fill="#cbd5e1" letter-spacing="1">FiveM &amp; Web Developer <tspan fill="#7b61ff">·</tspan> Founder of <tspan fill="#ffffff" font-weight="700">BB Store</tspan></text>
+
+    <!-- tags -->
+    <g class="mono fade d3" font-size="13" font-weight="600" text-anchor="middle">
+      <rect x="384" y="258" width="90" height="28" rx="14" fill="#7b61ff" fill-opacity="0.15" stroke="#7b61ff" stroke-opacity="0.5"/>
+      <text x="429" y="277" fill="#c4b5fd">QBCORE</text>
+      <rect x="486" y="258" width="66" height="28" rx="14" fill="#7b61ff" fill-opacity="0.15" stroke="#7b61ff" stroke-opacity="0.5"/>
+      <text x="519" y="277" fill="#c4b5fd">ESX</text>
+      <rect x="564" y="258" width="66" height="28" rx="14" fill="#2575fc" fill-opacity="0.15" stroke="#2575fc" stroke-opacity="0.5"/>
+      <text x="597" y="277" fill="#93c5fd">LUA</text>
+      <rect x="642" y="258" width="78" height="28" rx="14" fill="#2575fc" fill-opacity="0.15" stroke="#2575fc" stroke-opacity="0.5"/>
+      <text x="681" y="277" fill="#93c5fd">TEBEX</text>
+      <rect x="732" y="258" width="84" height="28" rx="14" fill="#2575fc" fill-opacity="0.15" stroke="#2575fc" stroke-opacity="0.5"/>
+      <text x="774" y="277" fill="#93c5fd">NEXT.JS</text>
+    </g>
+
+    <!-- decorative brackets -->
+    <g class="mono" font-size="150" font-weight="700" fill="#ffffff" fill-opacity="0.04">
+      <text x="40" y="270">&lt;/</text>
+      <text x="1160" y="270" text-anchor="end">&gt;</text>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="319" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+</svg>
