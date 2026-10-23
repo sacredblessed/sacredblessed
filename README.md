@@ -11,9 +11,7 @@
 
 <p align="center">
   <a href="https://discord.gg/bb-store-860522351945711676"><img src="https://img.shields.io/badge/BB%20Store-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="BB Store Discord" /></a>
-  <img src="https://img.shields.io/badge/Discord-devblessed-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord: devblessed" />
-  <img src="https://komarev.com/ghpvc/?username=sacredblessed&style=for-the-badge&color=7B61FF&label=PROFILE+VIEWS" alt="Profile views" />
-</p>
+  <img src="https://img.shields.io/badge/Discord-devblessed-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord: devblessed" /></p>
 
 ---
 
